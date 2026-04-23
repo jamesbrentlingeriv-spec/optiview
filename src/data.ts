@@ -161,7 +161,7 @@ export const LENSES: Lens[] = [
     description: 'Relief for dry eyes often felt when using digital devices.',
     features: ['Hydraclear Plus', 'UV Blocking', variant],
     popularity: 98,
-    price: variant === 'Sphere' ? 42 : variant === 'Toric' ? 52 : 65
+    price: variant === 'Sphere' ? 90 : variant === 'Toric' ? 60 : 65
   })),
   ...['Sphere', 'Toric'].map(variant => ({
     id: `acuvue-oasys-1day-${variant.toLowerCase()}`,
@@ -172,7 +172,7 @@ export const LENSES: Lens[] = [
     description: 'Engineered for your most demanding days.',
     features: ['Hydraluxe', 'UV Blocking', variant],
     popularity: 96,
-    price: variant === 'Sphere' ? 95 : 105
+    price: variant === 'Sphere' ? 110 : 70
   })),
   ...['Sphere', 'Toric', 'Multifocal', 'Multifocal for Astigmatism'].map(variant => ({
     id: `acuvue-oasys-max-1day-${variant.toLowerCase().replace(/ /g, '-')}`,
@@ -183,7 +183,9 @@ export const LENSES: Lens[] = [
     description: 'Designed to help with digital eye strain and light sensitivity.',
     features: ['TearStable', 'OptiBlue Light Filter', variant],
     popularity: 97,
-    price: 115
+    price: variant === 'Sphere' ? 130 : 
+           variant === 'Toric' ? 60 : 
+           variant === 'Multifocal' ? 155 : 70
   })),
   ...['Sphere', 'Toric', 'Multifocal'].map(variant => ({
     id: `acuvue-moist-1day-${variant.toLowerCase()}`,
@@ -194,7 +196,7 @@ export const LENSES: Lens[] = [
     description: 'The trusted choice for fresh comfort every day.',
     features: ['Lacreon', 'UV Blocking', variant],
     popularity: 94,
-    price: 85
+    price: variant === 'Sphere' ? 90 : variant === 'Toric' ? 115 : 125
   })),
   ...['Sphere', 'Toric'].map(variant => ({
     id: `acuvue-vita-${variant.toLowerCase()}`,
@@ -205,7 +207,7 @@ export const LENSES: Lens[] = [
     description: 'Consistent comfort all month long.',
     features: ['HydraMax', 'Non-Coated Silicone', variant],
     popularity: 88,
-    price: 55
+    price: variant === 'Sphere' ? 80 : 75
   })),
   {
     id: 'acuvue-2-sphere',
@@ -216,7 +218,7 @@ export const LENSES: Lens[] = [
     description: 'The classic blue-choice for reliability.',
     features: ['Infinity Edge', 'Easy Handling'],
     popularity: 75,
-    price: 35
+    price: 55
   },
   {
     id: 'acuvue-define',
@@ -227,7 +229,7 @@ export const LENSES: Lens[] = [
     description: 'Beauty lenses that enhance your natural eye color with multiple styles.',
     features: ['Lacreon', 'Beauty-Wrapped-In-Comfort', 'Available in 7 Styles'],
     popularity: 82,
-    price: 102
+    price: 65
   },
   {
     id: 'acuvue-abiliti',
@@ -251,7 +253,9 @@ export const LENSES: Lens[] = [
     description: 'Naturally breathable silicone hydrogel lenses.',
     features: ['Aquaform', 'High Oxygen', variant],
     popularity: 95,
-    price: 48
+    price: variant === 'Sphere' || variant === 'XR' ? 65 : 
+           variant === 'Toric' ? 75 : 
+           variant === 'Multifocal' ? 100 : 140
   })),
   {
     id: 'cooper-biofinity-energys',
@@ -262,7 +266,7 @@ export const LENSES: Lens[] = [
     description: 'Lens design specifically for digital life.',
     features: ['Digital Zone Optics', 'Aquaform'],
     popularity: 91,
-    price: 52
+    price: 70
   },
   ...['Sphere', 'Toric', 'Multifocal', 'Energys'].map(variant => ({
     id: `cooper-myday-${variant.toLowerCase()}`,
@@ -273,7 +277,9 @@ export const LENSES: Lens[] = [
     description: 'Uncompromised comfort and health.',
     features: ['Smart Silicone', 'Daily Ease', variant],
     popularity: 90,
-    price: 92
+    price: variant === 'Sphere' ? 155 : 
+           variant === 'Toric' ? 130 : 
+           variant === 'Multifocal' ? 130 : 110
   })),
   ...['Sphere', 'Toric', 'Multifocal'].map(variant => ({
     id: `cooper-clariti-1day-${variant.toLowerCase()}`,
@@ -284,7 +290,8 @@ export const LENSES: Lens[] = [
     description: 'Breathable, healthy, and high-performing daily lenses.',
     features: ['WetLoc', 'Silicone Hydrogel', variant],
     popularity: 87,
-    price: 75
+    price: variant === 'Sphere' ? 80 : 
+           variant === 'Toric' ? 100 : 105
   })),
   ...['Sphere', 'Toric'].map(variant => ({
     id: `cooper-avaira-vitality-${variant.toLowerCase()}`,
@@ -295,7 +302,7 @@ export const LENSES: Lens[] = [
     description: 'High performing 2-week lens with Class 1 UV protection.',
     features: ['Class 1 UV Protection', 'Third Gen Silicone Hydrogel', variant],
     popularity: 84,
-    price: 40
+    price: variant === 'Sphere' ? 55 : 60
   })),
   ...['Sphere', 'Toric', 'Multifocal', 'Multifocal Toric', 'XR'].map(variant => ({
     id: `cooper-proclear-${variant.toLowerCase().replace(/ /g, '-')}`,
@@ -306,7 +313,9 @@ export const LENSES: Lens[] = [
     description: 'Natural solution for eye dryness.',
     features: ['PC Technology', 'Biocompatible', variant],
     popularity: 80,
-    price: 44
+    price: variant === 'Sphere' || variant === 'XR' ? 80 : 
+           variant === 'Toric' ? 105 : 
+           variant === 'Multifocal' ? 100 : 180
   })),
   ...['Sphere', 'Multifocal'].map(variant => ({
     id: `cooper-proclear-1day-${variant.toLowerCase()}`,
@@ -317,7 +326,7 @@ export const LENSES: Lens[] = [
     description: 'Naturally attracts water for comfort.',
     features: ['PC Technology', 'Biocompatible', variant],
     popularity: 81,
-    price: 68
+    price: variant === 'Sphere' ? 95 : 115
   })),
   {
     id: 'cooper-misight-1day',
@@ -328,7 +337,7 @@ export const LENSES: Lens[] = [
     description: 'Specially designed for children with myopia.',
     features: ['Myopia Management', 'ActiveSontrol'],
     popularity: 85,
-    price: 135
+    price: 130
   },
   ...['55 Evolution', 'Toric', 'Now'].map(sub => ({
     id: `cooper-biomedics-${sub.toLowerCase().replace(/ /g, '-')}`,
@@ -339,7 +348,8 @@ export const LENSES: Lens[] = [
     description: 'The proven choice for value and comfort.',
     features: ['Value Driven', 'Sharp Vision', sub],
     popularity: 78,
-    price: sub === 'Now' ? 62 : 38
+    price: sub === '55 Evolution' ? 70 : 
+           sub === 'Toric' ? 75 : 62
   })),
 
   // --- 3. ALCON FAMILY ---
@@ -352,7 +362,8 @@ export const LENSES: Lens[] = [
     description: 'The first and only water gradient contact lens.',
     features: ['Water Gradient', 'SmarTears', variant],
     popularity: 99,
-    price: 110
+    price: variant === 'Sphere' ? 115 : 
+           variant === 'Toric' ? 130 : 140
   })),
   ...['Sphere', 'Toric', 'Multifocal', 'Multifocal for Astigmatism'].map(variant => ({
     id: `alcon-total30-${variant.toLowerCase().replace(/ /g, '-')}`,
@@ -363,7 +374,8 @@ export const LENSES: Lens[] = [
     description: 'Comfort that feels like nothing at day 30.',
     features: ['Celligent Technology', 'Biomimetic', variant],
     popularity: 96,
-    price: 65
+    price: variant.includes('Multifocal') ? 100 : 
+           variant === 'Toric' ? 75 : 65
   })),
   ...['Sphere', 'Toric'].map(variant => ({
     id: `alcon-precision1-${variant.toLowerCase()}`,
@@ -374,7 +386,7 @@ export const LENSES: Lens[] = [
     description: 'Designed for first-time wearers to address common vision needs.',
     features: ['SmartSurface', 'UV Filter', variant],
     popularity: 93,
-    price: 88
+    price: variant === 'Sphere' ? 80 : 100
   })),
   ...['Sphere', 'Toric', 'Multifocal'].map(variant => ({
     id: `alcon-optix-hydraglyde-${variant.toLowerCase()}`,
@@ -385,7 +397,8 @@ export const LENSES: Lens[] = [
     description: 'Breathable monthly lens with moisture retention.',
     features: ['HydraGlyde', 'SmartShield', variant],
     popularity: 90,
-    price: 52
+    price: variant === 'Sphere' ? 65 : 
+           variant === 'Toric' ? 75 : 110
   })),
   {
     id: 'alcon-optix-colors',
@@ -396,7 +409,7 @@ export const LENSES: Lens[] = [
     description: 'Naturally beautiful eye color enhancement in various shades.',
     features: ['3-in-1 Color Tech', 'Breathable', 'Available in 9+ Colors'],
     popularity: 85,
-    price: 62
+    price: 115
   },
   {
     id: 'alcon-optix-nightday',
@@ -407,7 +420,7 @@ export const LENSES: Lens[] = [
     description: 'Certified for 30 nights of continuous wear.',
     features: ['High Oxygen', 'Aspheric Optics'],
     popularity: 89,
-    price: 78
+    price: 100
   },
   ...['Sphere', 'Toric', 'Multifocal'].map(variant => ({
     id: `alcon-dacp-${variant.toLowerCase()}`,
@@ -418,7 +431,8 @@ export const LENSES: Lens[] = [
     description: 'Triple Action Moisture for comfort all day.',
     features: ['Blink-Activated', 'Moisture-Rich', variant],
     popularity: 91,
-    price: 72
+    price: variant === 'Sphere' ? 80 : 
+           variant === 'Toric' ? 100 : 115
   })),
   ...['Sphere', 'Toric'].map(variant => ({
     id: `alcon-precision7-${variant.toLowerCase()}`,
@@ -429,7 +443,7 @@ export const LENSES: Lens[] = [
     description: 'The newest addition for 2026, premium weekly replacement.',
     features: ['7-Day Freshness', 'Advanced Surface', variant],
     popularity: 94,
-    price: 58
+    price: variant === 'Sphere' ? 80 : 100
   })),
   {
     id: 'alcon-freshlook-colors',
@@ -440,7 +454,7 @@ export const LENSES: Lens[] = [
     description: 'Enhance or transform your eye color with several professional series.',
     features: ['Colorblends', 'Dimensions', 'One-Day Options'],
     popularity: 80,
-    price: 54
+    price: 85
   },
 
   // --- 4. BAUSCH + LOMB FAMILY ---
@@ -453,7 +467,8 @@ export const LENSES: Lens[] = [
     description: 'Next-generation lens solution for ocular surface stability. Featuring bio-affinity infused ingredients and biodegradable components.',
     features: ['ProBalance', 'Breathable Silicone', 'Bio-affinity Infused', variant],
     popularity: 92,
-    price: 98
+    price: variant === 'Sphere' ? 105 : 
+           variant === 'Toric' ? 120 : 130
   })),
   ...['Sphere', 'Toric', 'Multifocal', 'Multifocal for Astigmatism'].map(variant => ({
     id: `bl-ultra-monthly-${variant.toLowerCase().replace(/ /g, '-')}`,
@@ -464,7 +479,8 @@ export const LENSES: Lens[] = [
     description: 'Excellent vision for digital device users.',
     features: ['MoistureSeal', 'Comfort-Edge', variant],
     popularity: 89,
-    price: 54
+    price: variant === 'Sphere' ? 65 : 
+           variant === 'Toric' ? 75 : 90
   })),
   ...['Sphere', 'Toric', 'Multifocal'].map(variant => ({
     id: `bl-ultra-one-day-${variant.toLowerCase()}`,
@@ -475,7 +491,7 @@ export const LENSES: Lens[] = [
     description: 'Ultimate daily comfort with high moisture retention.',
     features: ['Advanced MoistureSeal', 'Daily Freshness', variant],
     popularity: 95,
-    price: 105
+    price: 155
   })),
   ...['Sphere', 'Toric', 'Multifocal'].map(variant => ({
     id: `bl-biotrue-${variant.toLowerCase()}`,
@@ -486,7 +502,8 @@ export const LENSES: Lens[] = [
     description: 'Inspired by the biology of your eyes.',
     features: ['HyperGel', '78% Water Content', variant],
     popularity: 88,
-    price: 82
+    price: variant === 'Sphere' ? 75 : 
+           variant === 'Toric' ? 95 : 105
   })),
   ...['38', 'Daily', 'Toric', 'Multifocal'].map(style => ({
     id: `bl-soflens-${style.toLowerCase()}`,
@@ -497,7 +514,9 @@ export const LENSES: Lens[] = [
     description: 'The legacy line providing consistent performance.',
     features: ['Tried and True', 'Comfort Design', style],
     popularity: 70,
-    price: 32
+    price: style === '38' ? 55 : 
+           style === 'Daily' ? 85 : 
+           style === 'Toric' ? 70 : 95
   })),
   ...['Sphere', 'Toric', 'Multifocal'].map(variant => ({
     id: `bl-purevision-2-${variant.toLowerCase()}`,
@@ -508,7 +527,7 @@ export const LENSES: Lens[] = [
     description: 'High definition optics for crisp vision.',
     features: ['HD Optics', 'AerGel Design', variant],
     popularity: 82,
-    price: 60
+    price: variant === 'Sphere' || variant === 'Toric' ? 95 : 105
   })),
   ...['Sphere', 'Toric', 'Multifocal', 'Multifocal Toric'].map(variant => ({
     id: `bl-revive-${variant.toLowerCase().replace(/ /g, '-')}`,
@@ -519,7 +538,7 @@ export const LENSES: Lens[] = [
     description: 'Custom-made soft contact lenses for precise fit.',
     features: ['Custom Fit', 'Specialized Geometry', variant],
     popularity: 68,
-    price: 250
+    price: variant.includes('Toric') ? 160 : 100
   })),
   {
     id: 'bl-silsoft',
@@ -530,6 +549,6 @@ export const LENSES: Lens[] = [
     description: 'High oxygen specialty lens for post-cataract or surgery.',
     features: ['Aphakic Support', 'High Oxygen Penetration'],
     popularity: 60,
-    price: 450
+    price: 220
   }
 ].map(l => ({ ...l, imageUrl: getImg(l.brand, l.name, l.manufacturer) }));
