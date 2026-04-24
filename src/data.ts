@@ -438,7 +438,7 @@ export const LENSES: Lens[] = [
     id: `alcon-precision7-${variant.toLowerCase()}`,
     brand: 'Precision7',
     name: `One-Week ${variant}`,
-    type: 'Two-Week' as const, // Grouping 7-day under Two-Week as closest category
+    type: 'Weekly' as const,
     manufacturer: 'Alcon',
     description: 'The newest addition for 2026, premium weekly replacement.',
     features: ['7-Day Freshness', 'Advanced Surface', variant],

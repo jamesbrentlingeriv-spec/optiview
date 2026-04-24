@@ -9,7 +9,7 @@ import {
 import { LENSES } from './data';
 import { Lens, LensType } from './types';
 
-const CATEGORIES: (LensType | 'All')[] = ['All', 'Daily', 'Two-Week', 'Monthly', 'RGP'];
+const CATEGORIES: (LensType | 'All')[] = ['All', 'Daily', 'Weekly', 'Two-Week', 'Monthly', 'RGP'];
 const SORT_OPTIONS = [
   { label: 'Alphabetical', value: 'alphabetical' },
   { label: 'Popularity', value: 'popularity' },
@@ -247,57 +247,53 @@ export default function App() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 onClick={() => setSelectedLens(lens)}
-                className={`group relative bg-[#111111] border rounded-2xl flex flex-col h-[300px] hover:bg-[#161616] transition-all cursor-pointer overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-white/5 ${checkedLensIds.has(lens.id) ? 'border-white/50 ring-1 ring-white/20' : 'border-white/5'}`}
+                className={`group relative bg-[#111111] border rounded-xl flex flex-col hover:bg-[#161616] transition-all cursor-pointer overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-white/5 ${checkedLensIds.has(lens.id) ? 'border-white/50 ring-1 ring-white/20' : 'border border-white/40'}`}
               >
-                {/* Full Card Background Image */}
-                <div className="absolute inset-0 z-0">
-                  <img 
-                    src={lens.imageUrl} 
-                    alt={lens.name}
-                    className={`w-full h-full object-cover transition-all duration-700 ${checkedLensIds.has(lens.id) ? 'opacity-100 scale-105' : 'opacity-80 group-hover:opacity-100 group-hover:scale-110'}`}
-                  />
-                  {/* Hover Overlay */}
-                  <div className={`absolute inset-0 bg-black/50 group-hover:bg-black/0 transition-colors duration-500 ${checkedLensIds.has(lens.id) ? 'bg-black/20' : ''}`} />
-                  
-                  <div className={`absolute inset-0 bg-gradient-to-t transition-colors duration-500 ${checkedLensIds.has(lens.id) ? 'from-white/10 via-[#090909]/70 to-transparent' : 'from-[#090909]/80 via-transparent to-transparent'}`} />
-                </div>
-
-                <div className="relative z-10 p-6 flex flex-col h-full">
+                {/* Black Header Section */}
+                <div className="relative z-10 bg-black p-4">
                   <div className="flex justify-between items-start mb-2">
-                    <div className="flex items-center gap-2">
-                      <span className="text-[9px] uppercase tracking-widest font-black bg-white px-2 py-0.5 rounded text-black shadow-lg">
-                        {lens.type}
-                      </span>
-                    </div>
+                    <span className="text-[8px] uppercase tracking-widest font-black bg-white px-1.5 py-0.5 rounded text-black shadow-lg">
+                      {lens.type}
+                    </span>
                     
                     {/* Checkbox Trigger */}
                     <button 
                       onClick={(e) => toggleCheck(lens.id, e)}
-                      className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all ${checkedLensIds.has(lens.id) ? 'bg-white border-white shadow-lg shadow-white/20' : 'bg-black/40 border-white/10 hover:border-white/30'}`}
+                      className={`w-6 h-6 rounded-full border flex items-center justify-center transition-all ${checkedLensIds.has(lens.id) ? 'bg-white border-white shadow-lg shadow-white/20' : 'bg-white/10 border-white/20 hover:border-white/40'}`}
                     >
-                      {checkedLensIds.has(lens.id) ? <Check size={16} className="text-black" /> : <div className="w-1.5 h-1.5 rounded-full bg-white/20" />}
+                      {checkedLensIds.has(lens.id) ? <Check size={12} className="text-black" /> : <div className="w-1 h-1 rounded-full bg-white/40" />}
                     </button>
                   </div>
 
-                  <div className="flex-1 mt-4">
-                    <span className="text-[9px] uppercase tracking-[0.2em] text-white font-black [text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]">
+                  <div className="mt-1">
+                    <p className="text-[7px] uppercase tracking-[0.15em] text-white/60 font-black mb-0.5">
                       {lens.manufacturer}
-                    </span>
-                    <h3 className="text-xl font-bold mt-1 leading-tight text-white group-hover:text-white transition-colors tracking-tight [text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]">
-                      {lens.brand} 
-                      <span className="block text-white text-lg leading-snug">{lens.name}</span>
+                    </p>
+                    <h3 className="text-base font-bold leading-tight text-white group-hover:text-white transition-colors tracking-tight">
+                      {lens.brand}
                     </h3>
+                    <p className="text-sm text-white/80 mt-0.5 leading-snug">
+                      {lens.name}
+                    </p>
                   </div>
 
-                  <div className="mt-auto pt-6 border-t border-white/5 flex justify-between items-end">
-                    <div className="space-y-1">
-                      <p className="text-[8px] uppercase tracking-widest text-white/20 font-extrabold">Registry Price</p>
-                      <p className="text-lg font-mono text-white/70">${lens.price?.toFixed(2)}</p>
-                    </div>
-                    <div className="px-3 py-1.5 rounded bg-white/5 text-[9px] text-white/40 border border-white/10 uppercase tracking-widest font-bold group-hover:border-white/40 group-hover:text-white transition-all">
-                      Analyze
-                    </div>
+                  {/* Price in header */}
+                  <div className="mt-3 pt-3 border-t border-white/10">
+                    <p className="text-[7px] uppercase tracking-widest text-white/40 font-extrabold">Registry Price</p>
+                    <p className="text-base font-mono text-white">${lens.price?.toFixed(2)}</p>
                   </div>
+                </div>
+
+                {/* Card Image Below */}
+                <div className="relative w-full h-[220px] overflow-hidden">
+                  <img 
+                    src={lens.imageUrl} 
+                    alt={`${lens.brand} ${lens.name}`}
+                    className={`w-full h-full object-cover transition-all duration-700 ${checkedLensIds.has(lens.id) ? 'scale-105' : 'group-hover:scale-110'}`}
+                  />
+                  
+                  {/* Subtle overlay for better contrast */}
+                  <div className={`absolute inset-0 bg-gradient-to-t from-black/20 to-transparent transition-opacity duration-500 ${checkedLensIds.has(lens.id) ? 'opacity-0' : 'opacity-100'}`} />
                 </div>
               </motion.div>
             ))}
